@@ -10,8 +10,8 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
 
-    const [password, setPassword] = useState('\0');
-    const [passwordError, setPasswordError] = useState('\0');
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
 
     const updateEmail = (val: string) => {
 
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
         if(!password)
             setPasswordError('Password is required.');
 
-        
+
     }
 
     return (
@@ -94,6 +94,14 @@ const Login: React.FC = () => {
                         <Button onClick={login} className="w-full">
                             Login
                         </Button>
+                        <div className="text-center text-sm">
+                            <p>
+                                Don&apos;t have an account? {' '}
+                                <a href="/signup" className="hover:underline">
+                                    Signup
+                                </a>
+                            </p>
+                        </div>
                         <div className="flex items-center space-x-4">
                             <Separator className="flex-1" />
                             <p className="text-center text-sm text-muted-foreground">OR</p>
